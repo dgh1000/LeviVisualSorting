@@ -9,6 +9,6 @@ logs
 !.vscode/launch.json
 !.vscode/extensions.json
 dist/**/*
-public/**/*
+public/**/*a
 .DS_Store
 Thumbs.db

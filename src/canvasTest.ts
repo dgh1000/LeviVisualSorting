@@ -23,14 +23,28 @@ function shuffle(xs: number[]): number[] {
     return out;
 }
 
+function bubblePass(xs: number[]): void {
+    for(let i = 0; i < xs.length - 1; i++) {
+        if (xs[i] > xs[i + 1]) {
+            swap(xs, i, i + 1);
+        }
+    }
+    draw(xs);
+    requestAnimationFrame(() => bubblePass(xs));
+}
+
+// func01
+//
+// requestAimationFrame(func01);
+
+
 
 function main(): void {
     let out: number[] = []
     for(let i = 0; i < 600; i ++) {
-        out.push(i);
+        out.push(Math.floor(Math.random()*100));
     }
-    out = shuffle(out);
-    draw(out);
+    bubblePass(out);
 }
 
 function draw(xs: number[]): void {
